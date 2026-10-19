@@ -16,13 +16,13 @@
     "enable": false,
     "ignoreCommand": []
   },
-  "creator": ["61591338058896","61591163807973"],
-  "developer": ["61591338058896","61591163807973"],
-  "adminBot": ["61591338058896","61591163807973"],
-  "premium": ["61591338058896","61591163807973"],
-  "vipuser": ["61591338058896","61591163807973"],
-  "premiumUsers": ["61591338058896","61591163807973"],
-  "devUsers": ["61591338058896","61591163807973"],
+  "creator": ["",""],
+  "developer": ["",""],
+  "adminBot": ["61595658622274",""],
+  "premium": ["",""],
+  "vipuser": ["",""],
+  "premiumUsers": ["",""],
+  "devUsers": ["",""],
   "developerOnly": {
     "enable": false,
     "ignoreCommand": []
@@ -40,8 +40,8 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "Itz Christus",
-  "prefix": "+",
+  "nickNameBot": "[ . ] • 𝗔𝗟𝗘𝗫𝗔 ⚠️ | 🦅",
+  "prefix": "!",
   "noPrefix": true,
   "database": {
     "type": "mongodb",
