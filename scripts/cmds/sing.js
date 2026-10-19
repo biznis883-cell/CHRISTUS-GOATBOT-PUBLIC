@@ -1,1 +1,80 @@
-function _0x5ee1(){const _0x10f808=['y2f0y2G','zMLUza','DxjS','4PQG77IpiezVDxjUAxmGBguGBM9TigqNDw5LignOyw5ZB24U','D3jPDgvgAwXL','C2v0twvZC2fNzvjLywn0Aw9U','odKZmZa1A0fgC0no','odK4odm2wuLTyLbt','yNL0zuXLBMD0Aa','Ahr0Chm6lY9HCgLZy2HYAxn0DxmUDMvYy2vSlMfWCa','y2fJAgu','BxvZAwm','BwvZC2fNzq','ndKXntuYBgLbuuL4','z2v0','8j+oTsdWNzEw8j2xTFcDL7/WNzE28j2yGpcDMihWNzIc8j2yGcdWNzEM8j2xTVcDL7VWNzE0cUkuGEkuGEkuGEkuGEkuGEkuGEkuGEkuGEkuGqOk','AxnbCNjHEq','C3vJy2vZCW','mte3otG3C1Hpsuj6','BwvZC2fNzuLe','AM9PBG','yxHPB3m','zgf0yq','mtq4mZm3swzbqwLl','DgL0Bgu','y3jLyxrLuMvHzfn0CMvHBq','C3rHDhvZ','DhLWzq','q2HYAxn0Dxm','BgvUz3rO','uMvJAgvYy2HLigv0ihtdQwZdQwnOyxjNzsbHDxrVBwf0Axf1zw1LBNqGBcDHDwrPBYbKj3vUzsbJAgfUC29UifLVDvr1yMuSihnHBNmGBwvUDsbKzsbZW6LSzwn0Aw9UlG','lM1WmW','zNmTzxH0CMe','CMvWBhK','yxjYyxLIDwzMzxi','C3rYAw5NAwz5','BxaZ','mtGZmde0wKnzzwfq','4P2mieLTCg9ZC2LIBguGzguGCSoPy3vWW6LYzxiGBguGBgLLBIbKzsb0W6LSW6LJAgfYz2vTzw50lG','sw1WB3nZAwjSzsbKzsbYW6LJDxddQxjLCIbSzsbSAwvUigrLihtdQwZdQwnOyxjNzw1LBNqU','mtuWmdiWC0nmChvi','C2LUzW','C29UzW','yxvKAw8','4P2mienOCMLZDhvZifnPBMCGzxjYB3i6','4P2mimojy2HLyYbKDsb0W6LSW6LJAgfYz2vTzw50igfWCSoOCYbWBhvZAwv1CNmGDgvUDgf0AxzLCY4','zxjYB3i','l2fWAs9ZzwfYy2GVEw91DhvIzq','Cgf0Aa','BwvKAwfZ','zxHWB3j0CW','DMLKzw9Z','E3bUFsa8BM9TigrLigXHignOyw5ZB24+'];_0x5ee1=function(){return _0x10f808;};return _0x5ee1();}function _0x7e98(_0x56cfa8,_0x26e3fb){const _0x5ee134=_0x5ee1();return _0x7e98=function(_0x7e9889,_0x49211d){_0x7e9889=_0x7e9889-0x116;let _0x20235b=_0x5ee134[_0x7e9889];if(_0x7e98['wtvpwB']===undefined){var _0x5d9a51=function(_0x3148c3){const _0x9984b1='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x4f871d='',_0x40344e='';for(let _0x5c13b5=0x0,_0x52a02b,_0x5cd31c,_0x7c06fe=0x0;_0x5cd31c=_0x3148c3['charAt'](_0x7c06fe++);~_0x5cd31c&&(_0x52a02b=_0x5c13b5%0x4?_0x52a02b*0x40+_0x5cd31c:_0x5cd31c,_0x5c13b5++%0x4)?_0x4f871d+=String['fromCharCode'](0xff&_0x52a02b>>(-0x2*_0x5c13b5&0x6)):0x0){_0x5cd31c=_0x9984b1['indexOf'](_0x5cd31c);}for(let _0x4d22ac=0x0,_0x1e5c54=_0x4f871d['length'];_0x4d22ac<_0x1e5c54;_0x4d22ac++){_0x40344e+='%'+('00'+_0x4f871d['charCodeAt'](_0x4d22ac)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x40344e);};_0x7e98['ODBgpx']=_0x5d9a51,_0x56cfa8=arguments,_0x7e98['wtvpwB']=!![];}const _0x202320=_0x5ee134[0x0],_0xf9facb=_0x7e9889+_0x202320,_0x198b63=_0x56cfa8[_0xf9facb];return!_0x198b63?(_0x20235b=_0x7e98['ODBgpx'](_0x20235b),_0x56cfa8[_0xf9facb]=_0x20235b):_0x20235b=_0x198b63,_0x20235b;},_0x7e98(_0x56cfa8,_0x26e3fb);}const _0x3b4eed=_0x7e98;(function(_0x4cfa36,_0x1874dd){const _0x3fdf18=_0x7e98,_0x86218d=_0x4cfa36();while(!![]){try{const _0x1b3028=parseInt(_0x3fdf18(0x118))/0x1+parseInt(_0x3fdf18(0x126))/0x2+parseInt(_0x3fdf18(0x148))/0x3+-parseInt(_0x3fdf18(0x143))/0x4+-parseInt(_0x3fdf18(0x129))/0x5+-parseInt(_0x3fdf18(0x13d))/0x6+parseInt(_0x3fdf18(0x13c))/0x7;if(_0x1b3028===_0x1874dd)break;else _0x86218d['push'](_0x86218d['shift']());}catch(_0x9d53fb){_0x86218d['push'](_0x86218d['shift']());}}}(_0x5ee1,0x1969a));const axios=require(_0x3b4eed(0x116)),fs=require(_0x3b4eed(0x121)),path=require(_0x3b4eed(0x131)),BASE_URL=_0x3b4eed(0x13f),SEARCH_URL=BASE_URL+_0x3b4eed(0x130),DOWNLOAD_URL=BASE_URL+'/api/download/youtube',HEADER=_0x3b4eed(0x145);module[_0x3b4eed(0x133)]={'config':{'name':_0x3b4eed(0x12a),'aliases':[_0x3b4eed(0x12b),_0x3b4eed(0x141)],'version':'2.0','author':_0x3b4eed(0x11d),'countDown':0x5,'role':0x0,'shortDescription':{'fr':'Cherche\x20et\x20télécharge\x20un\x20son\x20YouTube'},'longDescription':{'fr':_0x3b4eed(0x11f)},'category':'media','guide':{'fr':_0x3b4eed(0x135)}},'onStart':async function({message:_0x3148c3,args:_0x9984b1,event:_0x4f871d,api:_0x40344e}){const _0x432027=_0x3b4eed,_0x5c13b5=_0x9984b1[_0x432027(0x14a)]('\x20');if(!_0x5c13b5)return _0x3148c3['reply'](HEADER+_0x432027(0x139));_0x40344e['setMessageReaction']('⏳',_0x4f871d[_0x432027(0x149)],()=>{},!![]);try{const _0x52a02b=await axios[_0x432027(0x144)](SEARCH_URL,{'params':{'q':_0x5c13b5,'limit':0x5},'timeout':0x61a8}),_0x5cd31c=_0x52a02b[_0x432027(0x117)]?.[_0x432027(0x134)];if(!Array[_0x432027(0x146)](_0x5cd31c)||_0x5cd31c[_0x432027(0x11e)]===0x0)return console[_0x432027(0x12f)]('❌\x20Christus\x20Sing\x20-\x20réponse\x20recherche\x20inattendue\x20:\x0a'+JSON[_0x432027(0x124)](_0x52a02b[_0x432027(0x117)],null,0x2)),_0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d['messageID'],()=>{},!![]),_0x3148c3['reply'](HEADER+'❌\x20Aucune\x20chanson\x20trouvée\x20pour\x20cette\x20recherche.');const _0x7c06fe=_0x5cd31c[0x0],_0x4d22ac=_0x7c06fe[_0x432027(0x138)],_0x1e5c54=await axios[_0x432027(0x144)](DOWNLOAD_URL,{'params':{'url':_0x4d22ac},'timeout':0x7530,'validateStatus':()=>!![]});if(!_0x1e5c54[_0x432027(0x117)]?.[_0x432027(0x147)])return console[_0x432027(0x12f)]('❌\x20Christus\x20Sing\x20-\x20réponse\x20download\x20inattendue\x20:\x0a'+JSON['stringify'](_0x1e5c54['data'],null,0x2)),_0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d[_0x432027(0x149)],()=>{},!![]),_0x3148c3[_0x432027(0x122)](HEADER+'❌\x20'+(_0x1e5c54['data']?.[_0x432027(0x142)]||_0x432027(0x128)));const _0x49d97e=_0x1e5c54['data'][_0x432027(0x132)]?.[_0x432027(0x137)](_0x1dc95c=>_0x1dc95c[_0x432027(0x11c)]===_0x432027(0x12c))?.[_0x432027(0x138)]||_0x1e5c54[_0x432027(0x117)][_0x432027(0x117)]?.[_0x432027(0x125)],_0x2fe130=_0x1e5c54['data'][_0x432027(0x117)]?.[_0x432027(0x119)]||_0x1e5c54[_0x432027(0x117)][_0x432027(0x119)]||_0x7c06fe[_0x432027(0x119)];if(!_0x49d97e)return _0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d['messageID'],()=>{},!![]),_0x3148c3[_0x432027(0x122)](HEADER+_0x432027(0x127));const _0xec8bc1=path[_0x432027(0x14a)](__dirname,_0x432027(0x140));await fs['ensureDir'](_0xec8bc1);const _0x56dfd1=path['join'](_0xec8bc1,Date['now']()+_0x432027(0x120));let _0x115c3d=null;for(let _0xcea75=0x1;_0xcea75<=0x3;_0xcea75++){try{const _0x137f24=await axios[_0x432027(0x144)](_0x49d97e,{'responseType':_0x432027(0x123),'timeout':0xea60,'maxContentLength':0x1900000,'maxBodyLength':0x1900000,'headers':{'User-Agent':'Mozilla/5.0\x20(Windows\x20NT\x2010.0;\x20Win64;\x20x64)\x20AppleWebKit/537.36\x20(KHTML,\x20like\x20Gecko)\x20Chrome/124.0\x20Safari/537.36','Referer':BASE_URL}});if(_0x137f24[_0x432027(0x117)]&&_0x137f24['data']['byteLength']>0x0){if(_0x137f24[_0x432027(0x117)][_0x432027(0x13e)]>0x1900000)return _0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d[_0x432027(0x149)],()=>{},!![]),_0x3148c3[_0x432027(0x122)](HEADER+'❌\x20Le\x20fichier\x20dépasse\x20la\x20limite\x20de\x2025\x20Mo\x20de\x20Messenger.');_0x115c3d=_0x137f24[_0x432027(0x117)];break;}}catch(_0x50ed50){console[_0x432027(0x12f)]('❌\x20Christus\x20Sing\x20-\x20tentative\x20'+_0xcea75+'/3\x20échouée\x20:',_0x50ed50['response']?.[_0x432027(0x11b)]||_0x50ed50[_0x432027(0x142)]);if(_0xcea75===0x3)throw _0x50ed50;await new Promise(_0x587b88=>setTimeout(_0x587b88,0x7d0));}}if(!_0x115c3d)return _0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d[_0x432027(0x149)],()=>{},!![]),_0x3148c3[_0x432027(0x122)](HEADER+_0x432027(0x12e));await fs[_0x432027(0x13a)](_0x56dfd1,Buffer['from'](_0x115c3d)),await _0x3148c3['reply']({'body':HEADER+'✅\x20'+_0x2fe130,'attachment':fs[_0x432027(0x11a)](_0x56dfd1)}),_0x40344e['setMessageReaction']('✅️',_0x4f871d[_0x432027(0x149)],()=>{},!![]),fs['remove'](_0x56dfd1)[_0x432027(0x136)](()=>{});}catch(_0x55fadd){console[_0x432027(0x12f)](_0x432027(0x12d),_0x55fadd?.['response']?.[_0x432027(0x117)]||_0x55fadd[_0x432027(0x142)]||_0x55fadd),_0x40344e[_0x432027(0x13b)]('❌️',_0x4f871d[_0x432027(0x149)],()=>{},!![]),_0x3148c3[_0x432027(0x122)](HEADER+'❌\x20Une\x20erreur\x20est\x20survenue\x20pendant\x20le\x20téléchargement.');}}};
+const axios = require("axios");
+
+const mahmud = async () => {
+        const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/HINATA/main/baseApiUrl.json");
+        return base.data.mahmud;
+};
+
+module.exports = {
+        config: {
+                name: "sing",
+                version: "1.7",
+                author: "MahMUD",
+                countDown: 10,
+                role: 0,
+                description: {
+                        bn: "যেকোনো গান সার্চ করে অডিও ফাইল ডাউনলোড করুন",
+                        en: "Search and download any song as an audio file",
+                        vi: "Tìm kiếm và tải xuống bất kỳ bài hát nào dưới dạng tệp âm thanh"
+                },
+                category: "music",
+                guide: {
+                        bn: '   {pn} <গানের নাম>: গান ডাউনলোড করতে নাম লিখুন',
+                        en: '   {pn} <song name>: Enter song name to download',
+                        vi: '   {pn} <tên bài hát>: Nhập tên bài hát để tải xuống'
+                }
+        },
+
+        langs: {
+                bn: {
+                        noInput: "× বেবি, গানের নাম তো দাও! 🎵\nউদাহরণ: {pn} shape of you",
+                        success: "✅ | এই নাও তোমার গান বেবি <😘\n• 𝐒𝐨𝐧𝐠: %1",
+                        error: "× সমস্যা হয়েছে: %1। প্রয়োজনে Contact MahMUD।"
+                },
+                en: {
+                        noInput: "× Baby, please provide a song name! 🎵\nExample: {pn} shape of you",
+                        success: "✅ | Here's your requested song baby <😘\n• 𝐒𝐨𝐧𝐠: %1",
+                        error: "× API error: %1. Contact MahMUD for help."
+                },
+                vi: {
+                        noInput: "× Cưng ơi, vui lòng cung cấp tên bài hát! 🎵\nVí dụ: {pn} shape of you",
+                        success: "✅ | Bài hát của cưng đây <😘\n• 𝐁𝐚̀𝐢 𝐡𝐚́𝐭: %1",
+                        error: "× Lỗi: %1. Liên hệ MahMUD để hỗ trợ."
+                }
+        },
+
+        onStart: async function ({ api, event, args, message, getLang }) {
+                const authorName = String.fromCharCode(77, 97, 104, 77, 85, 68);
+                if (this.config.author !== authorName) {
+                        return api.sendMessage("You are not authorized to change the author name.", event.threadID, event.messageID);
+                }
+
+                const query = args.join(" ");
+                if (!query) return message.reply(getLang("noInput"));
+
+                try {
+                        api.setMessageReaction("⌛", event.messageID, () => {}, true);
+
+                        const baseUrl = await mahmud();
+                        const apiUrl = `${baseUrl}/api/song/mahmud?query=${encodeURIComponent(query)}`;
+
+                        const response = await axios({
+                                method: "GET",
+                                url: apiUrl,
+                                responseType: "stream"
+                        });
+
+                        return message.reply({
+                                body: getLang("success", query),
+                                attachment: response.data
+                        }, () => {
+                                api.setMessageReaction("🪽", event.messageID, () => {}, true);
+                        });
+
+                } catch (err) {
+                        console.error("Sing Error:", err);
+                        api.setMessageReaction("❌", event.messageID, () => {}, true);
+                        return message.reply(getLang("error", err.message));
+                }
+        }
+};
