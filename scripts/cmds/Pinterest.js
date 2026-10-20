@@ -3,101 +3,230 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const baseApiUrl = async () => {
-        const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/HINATA/main/baseApiUrl.json");
-        return base.data.mahmud;
+	const response = await axios.get(
+		"https://raw.githubusercontent.com/mahmudx7/HINATA/main/baseApiUrl.json",
+		{ timeout: 15000 }
+	);
+
+	const url = response.data?.mahmud;
+
+	if (!url || typeof url !== "string") {
+		throw new Error("Pinterest API URL is unavailable.");
+	}
+
+	return url.replace(/\/+$/, "");
 };
 
 module.exports = {
-        config: {
-                name: "pin",
-                aliases: ["pinterest", "pic"],
-                version: "1.7",
-                author: "MahMUD",
-                countDown: 10,
-                role: 0,
-                description: {
-                        bn: "পিন্টারেস্ট থেকে যেকোনো ছবি সার্চ করে ডাউনলোড করুন",
-                        en: "Search and download images from Pinterest",
-                        vi: "Tìm kiếm và tải xuống hình ảnh từ Pinterest"
-                },
-                category: "image gen",
-                guide: {
-                        bn: '   {pn} <নাম> - <পরিমাণ>: (যেমন: {pn} goku - 10)',
-                        en: '   {pn} <query> - <amount>: (Ex: {pn} goku - 10)',
-                        vi: '   {pn} <từ khóa> - <số lượng>: (VD: {pn} goku - 10)'
-                }
-        },
+	config: {
+		name: "pin",
+		aliases: ["pinterest", "pic"],
+		version: "2.0",
+		author: "Bassit",
+		countDown: 10,
+		role: 0,
+		description: {
+			en: "Search and download images from Pinterest"
+		},
+		category: "image",
+		guide: {
+			en: "{pn} <query> - <amount>\nExample: {pn} goku - 10"
+		}
+	},
 
-        langs: {
-                bn: {
-                        noInput: "× বেবি, কী ছবি খুঁজছো? নাম ও পরিমাণ দাও! 🔍\nউদাহরণ: {pn} goku - 10",
-                        noData: "× দুঃখিত, আপনার সার্চ অনুযায়ী কোনো ছবি পাওয়া যায়নি।",
-                        success: "✅ | আপনার জন্য \"%1\" এর %2টি ছবি এখানে রয়েছে:",
-                        error: "× সমস্যা হয়েছে: %1। প্রয়োজনে Contact MahMUD।\n•WhatsApp: 01836298139"
-                },
-                en: {
-                        noInput: "× Baby, please enter a search query and amount! 🔍\nExample: {pn} goku - 10",
-                        noData: "× Sorry, no images found for your query.",
-                        success: "✅ | Here are your %2 images for \"%1\":",
-                        error: "× API error: %1. Contact MahMUD for help.\n•WhatsApp: 01836298139"
-                },
-                vi: {
-                        noInput: "× Cưng ơi, hãy nhập từ khóa và số lượng! 🔍\nVD: {pn} goku - 10",
-                        noData: "× Rất tiếc, không tìm thấy hình ảnh nào.",
-                        success: "✅ | Đây là %2 hình ảnh cho \"%1\":",
-                        error: "× Lỗi: %1. Liên hệ MahMUD để hỗ trợ.\n•WhatsApp: 01836298139"
-                }
-        },
+	langs: {
+		en: {
+			noInput: "Please enter a search query.\nExample: {pn} goku - 10",
+			noData: "No images were found for your query.",
+			success: "Here are %2 images for \"%1\":",
+			error: "An error occurred: %1",
+			invalidAmount: "Please enter a valid amount between 1 and 20.",
+			tooLarge: "The downloaded images exceed the allowed size.",
+			downloadFailed: "Some images could not be downloaded. Please try again."
+		}
+	},
 
-        onStart: async function ({ api, event, args, message, getLang }) {
-                const authorName = String.fromCharCode(77, 97, 104, 77, 85, 68);
-                if (this.config.author !== authorName) {
-                        return api.sendMessage("You are not authorized to change the author name.", event.threadID, event.messageID);
-                }
+	onStart: async function ({ api, event, args, message, getLang }) {
+		const cacheDir = path.join(__dirname, "cache");
+		const tempFiles = [];
+		const streams = [];
 
-                const queryAndLength = args.join(" ").split("-");
-                const keySearch = queryAndLength[0]?.trim();
-                const count = queryAndLength[1]?.trim();
-                const numberSearch = count ? Math.min(parseInt(count), 20) : 6;
+		const react = (emoji) => {
+			try {
+				api.setMessageReaction(
+					emoji,
+					event.messageID,
+					() => {},
+					true
+				);
+			} catch (_) {}
+		};
 
-                if (!keySearch) return message.reply(getLang("noInput"));
+		try {
+			const input = args.join(" ").trim();
 
-                const cacheDir = path.join(__dirname, "cache");
-                if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
+			if (!input) {
+				return message.reply(getLang("noInput"));
+			}
 
-                try {
-                        api.setMessageReaction("⏳", event.messageID, () => {}, true);
+			const match = input.match(/^(.*?)\s*-\s*(\d+)\s*$/);
+			const query = match ? match[1].trim() : input;
+			const amount = match ? Number(match[2]) : 6;
 
-                        const response = await axios.get(`${await baseApiUrl()}/api/pin/mahmud?query=${encodeURIComponent(keySearch)}&limit=${numberSearch}`);
+			if (!query) {
+				return message.reply(getLang("noInput"));
+			}
 
-                        const data = response.data.images;
-                        if (!data || data.length === 0) {
-                                api.setMessageReaction("❌", event.messageID, () => {}, true);
-                                return message.reply(getLang("noData"));
-                        }
+			if (!Number.isInteger(amount) || amount < 1 || amount > 20) {
+				return message.reply(getLang("invalidAmount"));
+			}
 
-                        const attachments = [];
-                        for (let i = 0; i < data.length; i++) {
-                                const imgRes = await axios.get(data[i], { responseType: "arraybuffer" });
-                                const imgPath = path.join(cacheDir, `pin_${Date.now()}_${i}.jpg`);
-                                await fs.outputFile(imgPath, imgRes.data);
-                                attachments.push(fs.createReadStream(imgPath));
-                        }
+			react("⏳");
+			await fs.ensureDir(cacheDir);
 
-                        await message.reply({
-                                body: getLang("success", keySearch, attachments.length),
-                                attachment: attachments
-                        }, () => {
-                                api.setMessageReaction("✅", event.messageID, () => {}, true);
-                                attachments.forEach(att => {
-                                        if (fs.existsSync(att.path)) fs.unlinkSync(att.path);
-                                });
-                        });
+			const apiUrl = await baseApiUrl();
+			const response = await axios.get(
+				`${apiUrl}/api/pin/mahmud`,
+				{
+					params: {
+						query,
+						limit: amount
+					},
+					timeout: 30000
+				}
+			);
 
-                } catch (err) {
-                        console.error("Pinterest Error:", err);
-                        api.setMessageReaction("❌", event.messageID, () => {}, true);
-                        return message.reply(getLang("error", err.message));
-                }
-        }
+			const images = response.data?.images;
+
+			if (!Array.isArray(images) || images.length === 0) {
+				react("❌");
+				return message.reply(getLang("noData"));
+			}
+
+			const selectedImages = images
+				.filter(url =>
+					typeof url === "string" &&
+					/^https?:\/\//i.test(url)
+				)
+				.slice(0, amount);
+
+			if (selectedImages.length === 0) {
+				react("❌");
+				return message.reply(getLang("noData"));
+			}
+
+			const attachments = [];
+			let totalBytes = 0;
+			const maxTotalBytes = 24 * 1024 * 1024;
+
+			for (let i = 0; i < selectedImages.length; i++) {
+				let imageResponse;
+
+				try {
+					imageResponse = await axios.get(selectedImages[i], {
+						responseType: "arraybuffer",
+						timeout: 20000,
+						maxContentLength: maxTotalBytes,
+						maxBodyLength: maxTotalBytes,
+						validateStatus: status => status >= 200 && status < 300
+					});
+				} catch (error) {
+					console.error("Pinterest image download failed:", error.message);
+					continue;
+				}
+
+				const buffer = Buffer.from(imageResponse.data);
+
+				if (!buffer.length) continue;
+
+				totalBytes += buffer.length;
+
+				if (totalBytes > maxTotalBytes) {
+					throw new Error(getLang("tooLarge"));
+				}
+
+				const contentType = String(
+					imageResponse.headers["content-type"] || ""
+				).toLowerCase();
+
+				if (
+					contentType &&
+					!contentType.startsWith("image/") &&
+					!contentType.includes("octet-stream")
+				) {
+					totalBytes -= buffer.length;
+					continue;
+				}
+
+				let extension = ".jpg";
+
+				if (contentType.includes("png")) extension = ".png";
+				else if (contentType.includes("webp")) extension = ".webp";
+				else if (contentType.includes("gif")) extension = ".gif";
+
+				const filePath = path.join(
+					cacheDir,
+					`pin_${Date.now()}_${i}_${Math.random()
+						.toString(36)
+						.slice(2)}${extension}`
+				);
+
+				await fs.outputFile(filePath, buffer);
+				tempFiles.push(filePath);
+				attachments.push(fs.createReadStream(filePath));
+			}
+
+			if (attachments.length === 0) {
+				react("❌");
+				return message.reply(getLang("downloadFailed"));
+			}
+
+			for (const stream of attachments) {
+				streams.push(stream);
+			}
+
+			await new Promise((resolve, reject) => {
+				message.reply(
+					{
+						body: getLang(
+							"success",
+							query,
+							attachments.length
+						),
+						attachment: attachments
+					},
+					(error) => {
+						if (error) reject(error);
+						else resolve();
+					}
+				);
+			});
+
+			react("✅");
+		} catch (error) {
+			console.error("Pinterest command error:", error);
+
+			react("❌");
+
+			const errorMessage = error.message === getLang("tooLarge")
+				? getLang("tooLarge")
+				: getLang("error", error.message || "Unknown error");
+
+			return message.reply(errorMessage);
+		} finally {
+			for (const stream of streams) {
+				try {
+					stream.destroy();
+				} catch (_) {}
+			}
+
+			for (const file of tempFiles) {
+				try {
+					await fs.remove(file);
+				} catch (error) {
+					console.error("Failed to remove temporary image:", error.message);
+				}
+			}
+		}
+	}
 };
