@@ -40,7 +40,7 @@
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "[ . ] • 𝗔𝗟𝗘𝗫𝗔 ⚠️ | 🦅",
+  "nickNameBot": "[ . ]  𝗔𝗟𝗘𝗫𝗔 ⚠️ | 🦅",
   "prefix": "!",
   "noPrefix": true,
   "database": {
